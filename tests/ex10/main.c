@@ -1,23 +1,23 @@
 #include <bsd/string.h>
 #include <stdio.h>
 
-int     main(void)
+int	main(void)
 {
-	char    src[] = "teste teste kk";
-	char    dest[5];
-	int             i;
+	char	src[] = "zzzzzzzzzzzzzzzzz";
+	char	dest[10] = {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '\0'};
+	int		i;
 
-	strlcpy(dest, src, 5);
+	unsigned int size = strlcpy(dest, src, 7);
 
-	printf("src  pointer: %p\n", src);
-	printf("dest pointer: %p\n", dest);
+	printf("dest size: %d\n", size);
 
 	i = 0;
-	while (i < 23)
+	while (i < 10)
 	{
-		printf("%d - %c - %p\n", dest[i], dest[i], &dest[i]);
+		printf("%c\n", dest[i]);
 		i++;
 	}
 
-	printf("%s\n", dest);
+	printf("src1: %s\n", src);
+	printf("dest1: %s\n", dest);
 }
