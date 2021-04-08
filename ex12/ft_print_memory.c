@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psergio- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/08 22:43:56 by psergio-          #+#    #+#             */
+/*   Updated: 2021/04/08 22:55:48 by psergio-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 
@@ -14,7 +26,8 @@ void	to_hex(char *dest, unsigned int size, unsigned long nb)
 	{
 		dest[i] = g_hexmap[nb % 16];
 		nb /= 16;
-		i++; }
+		i++;
+	}
 	i = 0;
 	half = size / 2;
 	while (i < half)
@@ -68,21 +81,25 @@ void	print_text_content(char *addr, int size)
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
+	void			*addr_location;
 	char			address_text[15];
 	unsigned long	hex_chars;
 	unsigned long	limit;
 	int				max_length;
 
-	limit = (unsigned long)addr + size;
-	while((unsigned long)addr < limit)
+	addr_location = addr;
+	limit = (unsigned long)addr_location + size;
+	while ((unsigned long)addr_location < limit)
 	{
-		max_length = (limit - (unsigned long)addr) > 16 ? 16 : limit - (unsigned long)addr;
-		to_hex(address_text, 15, (long)addr);
+		max_length = (limit - (unsigned long)addr_location) > 16 ? 16
+			: limit - (unsigned long)addr_location;
+		to_hex(address_text, 15, (long)addr_location);
 		write(1, address_text, 15);
 		write(1, ": ", 2);
-		print_hex_content((char *)addr, max_length);
-		print_text_content((char *)addr, max_length);
+		print_hex_content((char *)addr_location, max_length);
+		print_text_content((char *)addr_location, max_length);
 		write(1, "\n", 1);
-		addr += 16;
+		addr_location += 16;
 	}
+	return (addr);
 }
