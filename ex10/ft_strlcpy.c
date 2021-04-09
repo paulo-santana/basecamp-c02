@@ -12,7 +12,7 @@
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int				i;
+	unsigned int	i;
 	unsigned int	last;
 
 	i = 0;
