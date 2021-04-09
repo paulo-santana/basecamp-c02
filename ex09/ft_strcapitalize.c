@@ -6,7 +6,7 @@
 /*   By: psergio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 20:36:58 by psergio-          #+#    #+#             */
-/*   Updated: 2021/04/07 20:37:30 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/04/09 11:54:13 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strcapitalize(char *str)
 				str[i] = str[i] - 32;
 			}
 		}
-        else
+		else
 		{
 			if (is_upper_alpha(str[i]))
 			{
