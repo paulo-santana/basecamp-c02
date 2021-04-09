@@ -4,7 +4,7 @@
 
 int	main(void)
 {
-	char *str;
+	char str[50];
 	ft_strcpy(str, "irineu, vc nao 5abe n3m-eu 42kkjkj");
 	printf("String: \"%s\"\n", str);
 
@@ -13,7 +13,7 @@ int	main(void)
 	printf("result: %s\n", result);
 
 	printf("\n");
-	ft_strcpy(str, "oi, tudo bem? 42palavras quarenta-e-duas; cinquenta+e+um");
+	ft_strcpy(str, "oi, tudo BEM? 42palAVRAs quaREnta-e-dUas; ciNQuentA+e+um");
 	printf("String: \"%s\"\n", str);
 	result = ft_strcapitalize(str);
 	printf("str: %s\n", str);

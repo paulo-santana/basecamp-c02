@@ -1,11 +1,11 @@
-#include "../../ex00/ft_strcpy.c"
+#include "ft_strcpy.c"
 #include <stdio.h>
 #include <string.h>
 
 int	main(void)
 {
 	int		i;
-	char	*src = "A vida e loka";
+	//char	*src = "A vida e loka";
 	char	*src2 = "slk mano";
 	char	dest[13];
 
