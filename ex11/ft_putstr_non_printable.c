@@ -32,8 +32,8 @@ void	ft_putstr_non_printable(char *str)
 			hex1 = hexmap[c % 16];
 			hex0 = hexmap[c / 16];
 			write(1, "\\", 1);
-			write(1, &hex1, 1);
 			write(1, &hex0, 1);
+			write(1, &hex1, 1);
 		}
 		i++;
 	}

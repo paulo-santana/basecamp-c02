@@ -83,7 +83,6 @@ void	*ft_print_memory(void *addr, unsigned int size)
 {
 	void			*addr_location;
 	char			address_text[15];
-	unsigned long	hex_chars;
 	unsigned long	limit;
 	int				max_length;
 
