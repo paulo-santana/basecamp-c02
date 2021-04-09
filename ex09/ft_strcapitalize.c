@@ -36,10 +36,8 @@ int		is_upper_alpha(char c)
 char	*ft_strcapitalize(char *str)
 {
 	int	i;
-	int	inside_word;
 
 	i = 0;
-	inside_word = 0;
 	while (str[i] != '\0')
 	{
 		if (i == 0 || !is_alphanumeric(str[i - 1]))
