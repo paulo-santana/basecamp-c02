@@ -26,11 +26,20 @@ int		is_lower_alpha(char c)
 	return (0);
 }
 
+int		is_upper_alpha(char c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	return (0);
+}
+
 char	*ft_strcapitalize(char *str)
 {
 	int	i;
+	int	inside_word;
 
 	i = 0;
+	inside_word = 0;
 	while (str[i] != '\0')
 	{
 		if (i == 0 || !is_alphanumeric(str[i - 1]))
@@ -38,6 +47,13 @@ char	*ft_strcapitalize(char *str)
 			if (is_lower_alpha(str[i]))
 			{
 				str[i] = str[i] - 32;
+			}
+		}
+        else
+		{
+			if (is_upper_alpha(str[i]))
+			{
+				str[i] = str[i] + 32;
 			}
 		}
 		i++;
