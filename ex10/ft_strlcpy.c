@@ -19,13 +19,14 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	last = 0;
 	while (src[i] != '\0')
 	{
-		if (i < size - 1)
+		if (i + 1 < size)
 		{
 			last++;
 			dest[i] = src[i];
 		}
 		i++;
 	}
-	dest[last] = '\0';
+	if (size > 0)
+		dest[last] = '\0';
 	return (i);
 }
