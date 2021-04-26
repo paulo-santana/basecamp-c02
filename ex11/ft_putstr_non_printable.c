@@ -14,11 +14,11 @@
 
 void	ft_putstr_non_printable(char *str)
 {
-	int		i;
-	char	c;
-	char	*hexmap;
-	char	hex1;
-	char	hex0;
+	int				i;
+	unsigned char	c;
+	char			*hexmap;
+	char			hex1;
+	char			hex0;
 
 	hexmap = "0123456789abcdef";
 	i = 0;
