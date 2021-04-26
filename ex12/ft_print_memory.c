@@ -82,7 +82,7 @@ void	print_text_content(char *addr, int size)
 void	*ft_print_memory(void *addr, unsigned int size)
 {
 	void			*addr_location;
-	char			address_text[15];
+	char			address_text[16];
 	unsigned long	limit;
 	int				max_length;
 
@@ -92,8 +92,8 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	{
 		max_length = (limit - (unsigned long)addr_location) > 16 ? 16
 			: limit - (unsigned long)addr_location;
-		to_hex(address_text, 15, (long)addr_location);
-		write(1, address_text, 15);
+		to_hex(address_text, 16, (long)addr_location);
+		write(1, address_text, 16);
 		write(1, ": ", 2);
 		print_hex_content((char *)addr_location, max_length);
 		print_text_content((char *)addr_location, max_length);
